@@ -18,7 +18,7 @@ run by the U.S. Department of Health and Human Services, the script does the fol
 
 > 2. Extract the files and put them in a directory of your choice. Use it as your local directory for this program.
 
-> 3. Run the file "HospitalComparison.R".
+> 3. Run the script "HospitalComparison.R".
 
 > 4. Enter `main()` at the console to start the program.
 
