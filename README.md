@@ -16,8 +16,12 @@ run by the U.S. Department of Health and Human Services, the script does the fol
 ###To run the script:
 > 1. Click [here](https://github.com/SamanthaLui/HospitalsCompare/archive/master.zip) to download the zip file containing this repo.
 
-> 2. Extract the files and put them in a directory of your choice. Set it as your local directory for this program.
+> 2. Extract the files and put them in a directory of your choice. Use it as your local directory for this program.
 
-> 3. Run the file _HospitalComparison.R_.
+> 3. Run the file "HospitalComparison.R".
 
 > 4. Enter `main()` at the console to start the program.
+
+> 5. For the first time one of _Option 1, 2, 3_, or _4_ is selected, the program downloads the data from [Hospital Compare web site](http://hospitalcompare.hhs.gov), extracts the file "hvbp_outcome_02_25_2014.csv" and stores both the zip and .csv files in the local directory.
+
+> 
