@@ -40,8 +40,8 @@ hospitalCompare <- function(){
                   outcomes <- getFiles()
                   
                   # Used to check if the user's later input is valid.
-                  states = unique(outcomes$State)
-                  possibleOutcomes = c("heart attack","heart failure", "pneumonia")
+                  states <- unique(outcomes$State)
+                  possibleOutcomes <- c("heart attack","heart failure", "pneumonia")
             }
      
             
@@ -55,14 +55,14 @@ hospitalCompare <- function(){
                         # Obtains input from user.
                         state_outcome_rank <- strsplit(as.character(prompt(2)),",")
                         # Sorts the user's input into usable inputs for the computation.
-                        state <- state_outcome_rank[[1]][1]
-                        outcome <- state_outcome_rank[[1]][2]
+                        state <- toupper(state_outcome_rank[[1]][1])
+                        outcome <- tolower(state_outcome_rank[[1]][2])
                         rank <- "best"
                   }
                   else {
                         state_outcome_rank <- strsplit(as.character(prompt(3)),",")
-                        state <- state_outcome_rank[[1]][1]
-                        outcome <- state_outcome_rank[[1]][2]
+                        state <- toupper(state_outcome_rank[[1]][1])
+                        outcome <- tolower(state_outcome_rank[[1]][2])
                         rank <- state_outcome_rank[[1]][3]
                   }
                   
@@ -83,7 +83,7 @@ hospitalCompare <- function(){
             if(input==3){
                   
                   outcome_rank <- strsplit(as.character(prompt(4)),",")
-                  outcome <- outcome_rank[[1]][1]
+                  outcome <- tolower(outcome_rank[[1]][1])
                   rank <- outcome_rank[[1]][2]
                   if  (!outcome %in% possibleOutcomes)
                         stop("invalid outcome")
@@ -104,15 +104,17 @@ hospitalCompare <- function(){
                   
                   cat("Table of hospital in each state ranking ",rank," in ",outcome,":\n", sep="")
                   print(allTable[order(allTable$State),])
-                  print("The result is also stored as `HospitalsAcrossUS.csv` in the local directory.")
-                  write.csv(allTable[order(allTable$State),],"HospitalsAcrossUS.csv",row.names = FALSE)
+                  outFName <- paste(outcome,"_",rank,"_HospitalsAcrossUS.csv",sep="")
+                  write.csv(allTable[order(allTable$State),],outFName,row.names = FALSE)
+                  out <- paste("The result is also stored as `",outFName, "in the local directory.")
+                  print(out)
             }
 
             # User selected Option 4.
             if(input==4){
                   state_outcome <- strsplit(as.character(prompt(5)),",")
-                  state <- state_outcome[[1]][1]
-                  outcome <- state_outcome[[1]][2]
+                  state <- toupper(state_outcome[[1]][1])
+                  outcome <- tolower(state_outcome[[1]][2])
                   if (!state %in% states)
                         stop("invalid state")
                   if  (!outcome %in% possibleOutcomes)
@@ -128,8 +130,10 @@ hospitalCompare <- function(){
                   names(allTable) <- c("Rank","Name of Hospital","Address","City")
                   cat("Table of all hospitals in ",state, " for ",outcome,":\n", sep="")
                   print(allTable)
-                  print("The result is also stored as `HospitalsAtState.csv` in the local directory.")
-                  write.csv(allTable,"HospitalsAtState.csv",row.names = FALSE)
+                  outFName <- paste(outcome,"_",state,"_HospitalsAtState.csv",sep="")
+                  write.csv(allTable,outFName,row.names = FALSE)
+                  out <- paste("The result is also stored as `",outFName, "in the local directory.")
+                  print(out)
             }
       }
       else # An invalid input option is entered.
@@ -195,8 +199,8 @@ prompt <- function(session=1){
 
       # Initial prompt.
       if(session==1){
-            cat("This engine ranks the hospitals around the U.S. according to the  the 30-day mortality and readmission rates 
-                for heart attacks, heart failure, and pneumonia for over 4,000 hospitals (as of 04/17/2014).",
+            cat("This engine ranks the hospitals around the U.S. according to the  the 30-day mortality and readmission rates ",
+                "for heart attacks, heart failure, and pneumonia for over 4,000 hospitals (as of 04/17/2014).",
                 "Please enter the number for one of the following options:\n",
                 "0: Exit the engine\n",
                 "1: Find the best hospital in a specified state for a specified outcome.\n",
@@ -210,8 +214,8 @@ prompt <- function(session=1){
       # Prompt for Option 1 related input.
       if(session==2){
             cat("You have selected Option 1: Find the best hospital in a specified state for a specified outcome.\n",
-                "Please enter the two-letter abbreviation of the state (e.g.,CA for California) and the outcome (heart attack,
-                heart failure,or pneumonia) separated by a comma.\n", 
+                "Please enter the two-letter abbreviation of the state (e.g.,CA for California) and the outcome (heart attack,",
+                "heart failure,or pneumonia) separated by a comma.\n", 
                 "For example, CA,heart attack\n",
                 sep="")
             output <- readline(prompt="Enter here: ")
@@ -220,8 +224,8 @@ prompt <- function(session=1){
       # Prompt for Option 2 related input.
       if(session==3){
             cat("You have selected Option 2: Find the hospital having a specified rank in a specified state for a specified outcome.\n",
-                "Please enter the two-letter abbreviation of the state (e.g.,CA for California), the outcome (heart attack,
-                      heart failure, or pneumonia) and the rank (best, worst, or any number) separated by a comma.\n", 
+                "Please enter the two-letter abbreviation of the state (e.g.,CA for California), the outcome (heart attack,",
+                      "heart failure, or pneumonia) and the rank (best, worst, or any number) separated by a comma.\n", 
                 "For example, CA,heart attack,5\n",
                 sep ="")
             output <- readline(prompt="Enter here: ")
