@@ -106,7 +106,7 @@ hospitalCompare <- function(){
                   print(allTable[order(allTable$State),])
                   outFName <- paste(outcome,"_",rank,"_HospitalsAcrossUS.csv",sep="")
                   write.csv(allTable[order(allTable$State),],outFName,row.names = FALSE)
-                  out <- paste("The result is also stored as `",outFName, "in the local directory.")
+                  out <- paste("The result is also stored as `",outFName, "`in the local directory.")
                   print(out)
             }
 
@@ -132,7 +132,7 @@ hospitalCompare <- function(){
                   print(allTable)
                   outFName <- paste(outcome,"_",state,"_HospitalsAtState.csv",sep="")
                   write.csv(allTable,outFName,row.names = FALSE)
-                  out <- paste("The result is also stored as `",outFName, "in the local directory.")
+                  out <- paste("The result is also stored as `",outFName, "`in the local directory.")
                   print(out)
             }
       }
