@@ -24,4 +24,4 @@ run by the U.S. Department of Health and Human Services, the script does the fol
 
 > 5. For the first time one of _Option 1, 2, 3_, or _4_ is selected, the program downloads the data from [Hospital Compare web site](http://hospitalcompare.hhs.gov), extracts the file "hvbp_outcome_02_25_2014.csv" and stores both the zip and .csv files in the local directory.
 
-> 6. If _Option 3_, or _4_ is selected, in addition to printing the result in the console, the script outputs it to the .csv files, "HospitalsAcrossUS.csv" and "HospitalsAtState.csv", respectively, in the local directory. 
+> 6. If _Option 3_, or _4_ is selected, in addition to printing the result in the console, the script outputs it to the .csv files, "nameOfTheDisease_HospitalsAcrossUS.csv" and "nameOfTheDisease_HospitalsAtState.csv", respectively, in the local directory. 
