@@ -1,4 +1,4 @@
-Hospitals Compare
+Hospital Compare
 ==================
 
 ###Summary
