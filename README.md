@@ -11,7 +11,7 @@ run by the U.S. Department of Health and Human Services, the script does the fol
 > 4. Ranks the hospitals in a state by the hospital's 30-day mortality rate of a given disease.
 
 
-> The result of each of the above tasks is output in the console. In addition, the result is output to a .csv file for Task 3 and Task 4. The script was produced using R x64 3.1.1 on Windows 7. The script and a pair of sample outputs for Task 3 and Task 4 are available in the main repo. 
+> The result of each of the above tasks is output in the console. In addition, it is output to a .csv file for Task 3 and Task 4. The script was produced using R x64 3.1.1 on Windows 7. The script and a pair of sample outputs for Task 3 and Task 4 are available in the main repo. 
 
 ###To run the script:
 > 1. Click [here](https://github.com/SamanthaLui/HospitalsCompare/archive/master.zip) to download the zip file containing this repo.
