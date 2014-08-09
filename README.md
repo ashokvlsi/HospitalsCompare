@@ -12,3 +12,12 @@ run by the U.S. Department of Health and Human Services, the script does the fol
 
 
 > The result of each of the above tasks is output in the console. In addition, the result is output to a .csv file for Task 3 and Task 4. The script was produced using R x64 3.1.1 on Windows 7. The script and a pair of sample outputs for Task 3 and Task 4 are available in the main repo. 
+
+###To run the script:
+> 1. Click [here](https://github.com/SamanthaLui/HospitalsCompare/archive/master.zip) to download the zip file containing this repo.
+
+> 2. Extract the files and put them in a directory of your choice. Set it as your local directory for this program.
+
+> 3. Run the file _HospitalComparison.R_.
+
+> 4. Enter `main()` at the console to start the program.
