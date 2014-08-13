@@ -3,7 +3,7 @@ Hospital Compare
 
 ###Summary
 > Based on the data (last update: 04/17/2014) from the [Hospital Compare web site](http://hospitalcompare.hhs.gov)
-run by the U.S. Department of Health and Human Services, the script
+run by the U.S. Department of Health and Human Services, the program
 
 > 1. Finds the best hospital in a state for a given disease (heart attack, heart failure, or pneumonia).
 > 2. Finds the hospital in a state having a given rank by the hospital's 30-day mortality rate of a given disease. 
